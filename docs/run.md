@@ -47,7 +47,7 @@ python infer_flip.py \
         --method flip_mcl
 ```
 
-TODO: Integrate all the training scripts into one file and add congigurable arguments to choose the method and benchmark more easily.
+TODO: Integrate all the training scripts into one file and add configurable arguments to choose the method and benchmark more easily.
 
 
 ### 0-shot, 5-shot and Benchmarks
