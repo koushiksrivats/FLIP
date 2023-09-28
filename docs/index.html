@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FaceAntiSpoofingFLIP">
+  <meta name="keywords" content="Face Anti-Spoofing, Domain Generalization, Text-guidance, Language-guidance, CLIP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+  <style>
+  @import url('https://fonts.cdnfonts.com/css/menlo');
+  </style>
+<body>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+         <h1 class="title is-2 publication-title">
+           <!-- <i class="fas fa-shield-alt"></i> -->
+           </span>FLIP: Cross-domain Face Anti-spoofing with Language Guidance</h1>
+        <div class="is-size-5 publication-authors">
+           <span class="author-block">
+             <a href="https://koushiksrivats.github.io">Koushik Srivatsan</a></sup>,
+           </span>
+           <span class="author-block">
+            <a href="https://muzammal-naseer.netlify.app">Muzammal Naseer</a></sup>,
+          </span>
+           <span class="author-block">
+             <a href="https://scholar.google.com/citations?user=2qx0RnEAAAAJ&hl=en">Karthik Nandakumar</a></sup>
+           </span>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"></sup><strong>MBZUAI, UAE.</strong></span>
+        </div>
+          
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><strong style="font-size: 1.5em;">[</strong><strong style="font-family: 'Google Sans', sans-serif; font-weight: bold; font-size: 1.4em; color: slateblue;">Accepted in ICCV 2023</strong><strong style="font-size: 1.5em;">]</strong></span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Srivatsan_FLIP_Cross-domain_Face_Anti-spoofing_with_Language_Guidance_ICCV_2023_paper.pdf"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/koushiksrivats/FLIP"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+
+            
+            <!-- Video Link.
+            <span class="link-block">
+              <a href=""
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Add the idea GIF -->
+<!-- <section class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+          <img src="./static/images/twitter_gif.gif">
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+<!-- Add an image -->
+<!-- <section class="hero-body">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+        <h2 class="title is-3">Attribute-conditioned adversarial face image generation</h2>
+      </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+          <img src="./static/images/pipeline.png">
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="subtitle has-text-justified">
+          <p>
+            Face anti-spoofing (FAS) or presentation attack detection is an essential component of face recognition systems deployed in security-critical applications. 
+            Existing FAS methods have poor generalizability to unseen spoof types, camera sensors, and environmental conditions. 
+            Recently, vision transformer (ViT) models have been shown to be effective for the FAS task due to their ability to capture long-range dependencies among image patches. 
+            However, adaptive modules or auxiliary loss functions are often required to adapt pre-trained ViT weights learned on large-scale datasets such as ImageNet. 
+            In this work, we first show that initializing ViTs with multimodal (e.g., CLIP) pre-trained weights improves generalizability for the FAS task, which is in line with the zero-shot transfer capabilities of vision-language pre-trained (VLP) models. 
+            We then propose a novel approach for robust cross-domain FAS by grounding visual representations with the help of natural language. 
+            Specifically, we show that aligning the image representation with an ensemble of class descriptions (based on natural language semantics) improves FAS generalizability in low-data regimes. 
+            Finally, we propose a multimodal contrastive learning strategy to boost feature generalization further and bridge the gap between source and target domains. 
+            Extensive experiments on three standard protocols demonstrate that our method significantly outperforms the state-of-the-art methods, achieving better zero-shot transfer performance than five-shot transfer of “adaptive ViTs”.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Highlights section -->
+<section class="hero-body">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+        <h2 class="title is-3">Highlights</h2>
+      </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+          <img src="./static/images/flip_framework.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <ol>
+          <li>We show that direct finetuning of a multimodal pre-trained ViT (e.g., CLIP image encoder) achieves better FAS generalizability without any bells and whistles.</li>
+          <li>We propose a new approach for robust cross-domain FAS by grounding the visual representation using natural language semantics. This is realized by aligning the image representation with an ensemble of text prompts (describing the class) during finetuning.</li>
+          <li>We propose a multimodal contrastive learning strategy, which enforces the model to learn more generalized features that bridge the FAS domain gap even with limited training data. This strategy leverages view-based image self-supervision and view-based cross-modal image-text similarity as additional constraints during the learning process.</li>
+          <li>Extensive experiments on three standard protocols demonstrate that our method significantly outperforms the state- of-the-art methods, achieving better zero-shot transfer performance than five-shot transfer of “adaptive ViTs”.</li>
+        </ol>
+      </div>
+    </div>
+</section>
+
+
+<!-- Add results -->
+<section class="hero-body">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+      </div>
+  </div>
+
+  <!-- MCIO -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <p>
+        <strong>Cross Dommain performance in Protocol 1</strong>
+      </p>
+      <div class="column is-four-fifths"><img src="./static/images/benchmark-1.png"></div>
+    </div>
+  </div>
+
+  <!-- WCS -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <p>
+        <strong>Cross Dommain performance in Protocol 2</strong>
+      </p>
+      <div class="column is-four-fifths"><img src="./static/images/benchmark-2.png"></div>
+    </div>
+  </div>
+
+  <!-- 1-1 setting -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <p>
+        <strong>Cross Dommain performance for Protocol 3</strong>
+      </p>
+      <div class="column is-four-fifths"><img src="./static/images/benchmark-3.png"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- Add visualizations -->
+<section class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+          <h2 class="title is-3">Visualizations</h2>
+        </div>
+    </div>
+
+    <!-- Attention maps -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+          <h3 class="title is-4">Attention Maps</h3>
+        </div>
+    </div>
+
+    <!-- MCIO -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <p>
+          <strong>Attention Maps on the spoof samples in MCIO datasets:</strong>
+          Attention highlights are on the spoof-specific clues such as paper texture (M), edges of the paper (C), and moire patterns (I and O).
+        </p>
+        <div class="column is-four-fifths"><img src="./static/images/attention_map_mcio.png"></div>
+      </div>
+    </div>
+
+    <!-- WCS -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <p>
+          <strong>Attention Maps on the spoof samples in WCS datasets:</strong>
+          Attention highlights are on the spoof-specific clues such as screen edges/screen reflection (W), wrinkles in printed cloth (C), and cut-out eyes/nose (S).
+        </p>
+        <div class="column is-four-fifths"><img src="./static/images/wcs_attention_map.png"></div>
+      </div>
+    </div>
+
+
+    <!-- Mis-classified examples -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+          <h3 class="title is-4">Mis-Classified Examples</h3>
+          <p>Blue boxes indicate real faces mis-classified as spoof. Orange boxes indicate spoof faces mis-classified as real.</p>
+        </div>
+    </div>
+
+    <!-- MCIO-->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <p><strong>Mis-classified examples in MCIO datasets.</strong></p>
+        <div class="column is-four-fifths"><img src="./static/images/misclassification_analysis_mcio.png"></div>
+      </div>
+    </div>
+
+    <!-- WCS -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <p><strong>Mis-classified examples in WCS datasets.</strong></p>
+        <div class="column is-four-fifths"><img src="./static/images/wcs_misclassify_analysis.png"></div>
+      </div>
+    </div>
+</section>
+
+
+<!-- Bibtex -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @InProceedings{Srivatsan_2023_ICCV,
+        author    = {Srivatsan, Koushik and Naseer, Muzammal and Nandakumar, Karthik},
+        title     = {FLIP: Cross-domain Face Anti-spoofing with Language Guidance},
+        booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+        month     = {October},
+        year      = {2023},
+        pages     = {19685-19696}
+    } 
+</code></pre>
+  </div>
+</section>
+  
+
+<!-- Acknowledgements -->
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website adapted from the following <a href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
