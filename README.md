@@ -17,6 +17,10 @@
   <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Srivatsan_FLIP_Cross-domain_Face_Anti-spoofing_with_Language_Guidance_ICCV_2023_paper.pdf" target='_blank'>
     <img src="https://img.shields.io/badge/ICCV-Paper-blue.svg">
   </a> 
+
+  <a href="https://arxiv.org/pdf/2309.16649.pdf" target='_blank'>
+    <img src="https://img.shields.io/badge/arXiv-Paper-brown.svg">
+  </a>
   
   <a href="https://koushiksrivats.github.io/FLIP/" target='_blank'>
     <img src=https://img.shields.io/badge/Project-Website-87CEEB">
@@ -66,6 +70,37 @@ Please refer to [datasets.md](docs/datasets.md) for acquiring and pre-processing
 
 ### Training and Inference
 Please refer to [run.md](docs/run.md) for training and evaluating the models.
+
+
+## Results :chart_with_upwards_trend:
+<p align="center">
+  Cross Domain performance in Protocol 1
+  <img src="./docs/static/images/benchmark-1.png" align="center" width="90%">
+</p>
+
+<p align="center">
+  Cross Domain performance in Protocol 2
+  <img src="./docs/static/images/benchmark-2.png" align="center" width="90%">
+</p>
+
+<p align="center">
+  Cross Domain performance in Protocol 3
+  <img src="./docs/static/images/benchmark-3.png" align="center" width="90%">
+</p>
+
+
+## Visualizations :art:
+<p align="center">
+  <strong>Attention Maps on the spoof samples in MCIO datasets:</strong>
+  Attention highlights are on the spoof-specific clues such as paper texture (M), edges of the paper (C), and moire patterns (I and O).
+  <img src="./docs/static/images/attention_map_mcio.png" align="center" width="90%">
+</p>
+
+<p align="center">
+  <strong>Attention Maps on the spoof samples in WCS datasets:</strong>
+  Attention highlights are on the spoof-specific clues such as screen edges/screen reflection (W), wrinkles in printed cloth (C), and cut-out eyes/nose (S).
+  <img src="./docs/static/images/wcs_attention_map.png" align="center" width="90%">
+</p>
 
 
 ## Citation
