@@ -1,0 +1,10 @@
+wmca/test/real/23.05.18_012_06_000_0_00_02.jpg
+wmca/test/real/31.01.18_019_01_000_0_01_00.jpg
+wmca/test/real/26.01.18_008_01_000_0_01_06.jpg
+wmca/test/real/08.02.18_002_03_000_0_01_02.jpg
+wmca/test/real/23.05.18_072_06_000_0_00_04.jpg
+wmca/test/real/16.02.18_043_03_000_0_01_07.jpg
+wmca/test/real/07.02.18_036_02_000_0_00_06.jpg
+wmca/test/real/01.02.18_043_01_000_0_00_04.jpg
+wmca/test/real/15.05.18_005_05_000_0_00_03.jpg
+wmca/test/real/24.04.18_067_07_000_0_00_08.jpg

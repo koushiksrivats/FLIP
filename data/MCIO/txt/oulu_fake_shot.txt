@@ -1,0 +1,10 @@
+oulu/train/fake/6_1_13_2_frame0.png
+oulu/train/fake/2_3_17_3_frame0.png
+oulu/train/fake/4_1_04_4_frame0.png
+oulu/test/fake/3_2_42_2_frame0.png
+oulu/test/fake/1_3_38_3_frame0.png
+oulu/train/fake/3_2_11_5_frame0.png
+oulu/test/fake/3_2_39_4_frame0.png
+oulu/test/fake/3_2_51_3_frame0.png
+oulu/train/fake/2_1_09_5_frame0.png
+oulu/train/fake/6_1_05_4_frame0.png

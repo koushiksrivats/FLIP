@@ -1,0 +1,10 @@
+surf/test/fake/Val_0002_002769-color.jpg
+surf/test/fake/Val_0003_003591-color.jpg
+surf/test/fake/Val_0003_003258-color.jpg
+surf/test/fake/Val_0006_006398-color.jpg
+surf/test/fake/Val_0003_003034-color.jpg
+surf/test/fake/Val_0003_003939-color.jpg
+surf/test/fake/Val_0001_001474-color.jpg
+surf/test/fake/Val_0004_004674-color.jpg
+surf/test/fake/Val_0003_003399-color.jpg
+surf/test/fake/Val_0005_005196-color.jpg

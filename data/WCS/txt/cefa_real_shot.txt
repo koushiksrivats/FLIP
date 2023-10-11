@@ -1,0 +1,10 @@
+cefa/test/real/1_213_1_1_1_05.jpg
+cefa/test/real/3_235_1_1_1_05.jpg
+cefa/test/real/1_288_1_1_1_08.jpg
+cefa/test/real/1_262_1_1_1_06.jpg
+cefa/test/real/2_203_1_1_1_09.jpg
+cefa/test/real/3_297_1_1_1_09.jpg
+cefa/test/real/2_240_1_1_1_05.jpg
+cefa/test/real/2_283_1_1_1_02.jpg
+cefa/test/real/3_223_1_1_1_02.jpg
+cefa/test/real/1_224_1_1_1_05.jpg

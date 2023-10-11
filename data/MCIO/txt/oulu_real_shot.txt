@@ -1,0 +1,10 @@
+oulu/train/real/2_2_12_1_frame0.png
+oulu/test/real/5_3_49_1_frame0.png
+oulu/train/real/1_1_02_1_frame0.png
+oulu/test/real/2_3_48_1_frame0.png
+oulu/test/real/5_3_54_1_frame0.png
+oulu/train/real/3_3_04_1_frame0.png
+oulu/train/real/2_2_07_1_frame0.png
+oulu/test/real/5_2_55_1_frame0.png
+oulu/test/real/5_3_50_1_frame0.png
+oulu/test/real/1_3_55_1_frame0.png

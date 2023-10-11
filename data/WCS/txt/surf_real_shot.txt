@@ -1,0 +1,10 @@
+surf/test/real/Val_0006_006102-color.jpg
+surf/test/real/Val_0009_009157-color.jpg
+surf/test/real/Val_0008_008600-color.jpg
+surf/test/real/Val_0007_007699-color.jpg
+surf/test/real/Val_0002_002074-color.jpg
+surf/test/real/Val_0004_004028-color.jpg
+surf/test/real/Val_0003_003354-color.jpg
+surf/test/real/Val_0007_007863-color.jpg
+surf/test/real/Val_0003_003584-color.jpg
+surf/test/real/Val_0006_006914-color.jpg
